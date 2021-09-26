@@ -19,7 +19,8 @@ export default {
   },
   data: function() {
     return {
-      connection: null
+      connection: null,
+      coins: null
     }
   },
   created: function() {
@@ -36,14 +37,32 @@ export default {
       console.log("Successfully connected to the echo websocket server...")
     }
 
-    fetch('https://portal.coinroutes.com/api/currency_pairs/', {
-      method: "GET",
-      headers: {"Authorization": "Token 6c634e1eacecc4801b000249287fbf923d5c8824"}
-    })
-    .then(response => response.json()) 
-    .then(json => console.log(json)) 
-    .catch(err => console.log(err));
+    // fetch('https://portal.coinroutes.com/api/currency_pairs/', {
+    //   method: "GET",
+    //   headers: {"Authorization": "Token 6c634e1eacecc4801b000249287fbf923d5c8824"}
+    // })
+    // .then(response => response.json()) 
+    // .then(json => console.log(json)) 
+    // .catch(err => console.log(err));
+
+    // this.axios.get('https://api.coingecko.com/api/v3/coins/list').then(res => {
+    //         console.log(res);
+    //       }).catch(err => {
+    //         console.log(err.response); https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cdogecoin&vs_currencies=usd
+    //       });
     
+    // this.axios.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd').then(res => {
+    //     console.log(res);
+    //   }).catch(err => {
+    //     console.log(err.response);
+    //   });
+    
+    this.axios.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cethereum%2Cdogecoin&vs_currencies=usd').then(res => {
+        console.log(res.data)
+        this.coins = res.data
+      }).catch(err => {
+        console.log(err.response);
+      });
   },
   methods: {
     sendMessage: function() {
