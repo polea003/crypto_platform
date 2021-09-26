@@ -63,7 +63,6 @@ export default {
     },
     created () {
         this.fetchTrendingCoins()
-        this.fetchData()
     },
     components: {
       CoinCard
@@ -74,27 +73,12 @@ export default {
     methods: {
         fetchTrendingCoins: async function() {
         this.axios.get('https://api.coingecko.com/api/v3/search/trending').then(res => {
-            console.log(res.data)
+            // console.log(res.data)
             this.trendingCoins = res.data
             }).catch(err => {
             console.log(err.response);
             });
-            setTimeout(function () { this.fetchData() }.bind(this), 3000)
-        },
-        fetchData: async function() {
-        let coinData = []
-        this.$store.user.portfolio.coins.forEach(element => 
-          this.axios.get(`https://api.coingecko.com/api/v3/coins/${element.id}?localization=false&community_data=false&developer_data=false&sparkline=false`).then(res => {
-          // console.log(res.data)
-          let response = res.data
-          response.quantity = element.quantity
-          coinData.push(response)
-          }).catch(err => {
-          console.log(err.response);
-          })
-        )
-        this.$store.commit('updateCoinData', coinData)
-      }
+        }
     }
 
 }

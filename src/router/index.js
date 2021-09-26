@@ -33,6 +33,15 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Portfolio.vue')
+  },
+  {
+    path: '/:coin-:symbol',
+    name: 'Coin',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    props: (route) => ({ coin: route.params.coin , symbol: route.params.symbol }),
+    component: () => import(/* webpackChunkName: "about" */ '../views/Coin.vue')
   }
 ]
 

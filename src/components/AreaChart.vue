@@ -38,7 +38,7 @@ export default {
         ],
         datasets: [
           {
-            label: "Data One",
+            label: "Portfolio Value",
             borderColor: "#42b983",
             pointBackgroundColor: "white",
             borderWidth: 1,
