@@ -2,7 +2,7 @@
   <div class="md:mx-4 mb-20">
     <div class="m-2 text-xl font-bold mb-4">Explore Investments</div>
 
-    <div class="ml-2 font-bold">Watch List</div>
+    <div class="ml-2 font-bold md:text-center">Watch List</div>
 
     <div class="flex flex-col items-center">
 
@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <div class="flex items-end">
+    <div class="flex items-end md:justify-center">
       <div class="ml-2 mt-4 pb-1 font-bold">Trending Coins</div>
       <div class="text-sm font-bold p-1 ml-4 cursor-pointer">View All</div>
     </div>
@@ -127,7 +127,7 @@
       </div>
     </div>
 
-    <div class="flex items-end">
+    <div class="flex items-end md:justify-center">
       <div class="ml-2 mt-4 pb-1 font-bold">Largest Market Cap</div>
       <div class="text-sm font-bold p-1 ml-4 cursor-pointer">View All</div>
     </div>

@@ -13,41 +13,42 @@
       <div>1Y</div>
     </div>
     
-    <div class="text-xl mt-8 ml-2 font-bold">Asset Breakdown</div>
-    <div class="flex flex-col items-center">
-    <PieChart class="w-64"/>
+    <div class="text-xl mt-8 ml-2 font-bold md:text-center">Asset Breakdown</div>
+    <div class="flex flex-col lg:flex-row lg:justify-center items-center">
+      <PieChart class="w-64"/>
+    
+
+      <div class="flex flex-col items-center ml-6">
+        <div class="flex font-bold">
+          <div class="w-20">%</div>
+          <div class="w-28">Asset</div>
+          <div class="w-20">Quantity</div>
+          <div class="w-20">Value</div>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center">
+            <div class="w-20">45</div>
+            <div class="w-28">Bitcoin</div>
+            <div class="w-20">0.0034</div>
+            <div class="w-20 text-green-500">$425.45</div>
+          </div>
+          <div class="flex items-center">
+            <div class="w-20">35</div>
+            <div class="w-28">Ethereum</div>
+            <div class="w-20">0.54</div>
+            <div class="w-20 text-green-500">$275.35</div>
+          </div>
+          <div class="flex items-center">
+            <div class="w-20">20</div>
+            <div class="w-28">Dogecoin</div>
+            <div class="w-20">134.21</div>
+            <div class="w-20 text-green-500">$134.57</div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="flex flex-col items-center ml-6">
-    <div class="flex font-bold">
-      <div class="w-20">%</div>
-      <div class="w-28">Asset</div>
-      <div class="w-20">Quantity</div>
-      <div class="w-20">Value</div>
-    </div>
-    <div class="flex flex-col">
-      <div class="flex items-center">
-        <div class="w-20">45</div>
-        <div class="w-28">Bitcoin</div>
-        <div class="w-20">0.0034</div>
-        <div class="w-20 text-green-500">$425.45</div>
-      </div>
-      <div class="flex items-center">
-        <div class="w-20">35</div>
-        <div class="w-28">Ethereum</div>
-        <div class="w-20">0.54</div>
-        <div class="w-20 text-green-500">$275.35</div>
-      </div>
-      <div class="flex items-center">
-        <div class="w-20">20</div>
-        <div class="w-28">Dogecoin</div>
-        <div class="w-20">134.21</div>
-        <div class="w-20 text-green-500">$134.57</div>
-      </div>
-    </div>
-    </div>
-
-    <div class="text-xl mt-8 ml-2 font-bold mb-4">Transaction History</div>
+    <div class="text-xl mt-8 ml-2 font-bold mb-4 md:text-center">Transaction History</div>
     <div class="flex flex-col items-center">
     <div class="flex font-bold">
       <div class="w-20">Date</div>
@@ -92,12 +93,8 @@ export default {
   },
   data() {
     return {
-      chartData: {
-        Books: 24,
-        Magazine: 30,
-        Newspapers: 10
-      }
-    };
+      
+    }
   }
 };
 </script>
