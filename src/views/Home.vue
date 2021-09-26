@@ -20,16 +20,22 @@ export default {
   data: function() {
     return {
       connection: null,
-      coins: null
+      coins: null,
+      coinData: undefined
     }
   },
   created: function() {
+
+    this.fetchData()
+
     console.log("Starting connection to WebSocket Server")
     this.connection = new WebSocket("wss://portal.coinroutes.com/api/streaming/real_price/?token=6c634e1eacecc4801b000249287fbf923d5c8824")
 
     // this.connection = new WebSocket("wss://ws-postman.eu-gb.mybluemix.net/ws/echo")
-    this.connection.onmessage = function(event) {
-      console.log(event);
+    this.connection.onmessage = (event) => {
+      console.log(JSON.parse(event.data));
+      let response = JSON.parse(event.data)
+      this.coinData = response
     }
 
     this.connection.onopen = function(event) {
@@ -65,6 +71,15 @@ export default {
       });
   },
   methods: {
+    fetchData: function() {
+      this.axios.get('https://api.coingecko.com/api/v3/coins/bitcoin?localization=false&community_data=false&developer_data=false&sparkline=false').then(res => {
+          console.log(res.data)
+          this.coinData = res.data
+        }).catch(err => {
+          console.log(err.response);
+        });
+        setTimeout(function () { this.fetchData() }.bind(this), 3000)
+    },
     sendMessage: function() {
       // this.connection.send('hello');
       this.connection.send('{"currency_pair":"BTC-USD", "quantity":"5.00"}');

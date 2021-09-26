@@ -8,57 +8,10 @@
 
       <div class="flex flex-grow flex-wrap px-4">
 
-        <div class="bg-green-400 rounded border-2 border-green-500 w-40 h-24 text-black m-1">
-          <div class="flex flex-col p-2">
-            <div class="flex items-center justify-between">
-              <div class="text-xl font-bold">Bitcoin</div>
-              <div class="text-sm">BTC</div>
-            </div>
-            <div class="flex justify-between">
-              <div>$42356.45</div>
-              <div>%4.32</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-red-400 rounded border-2 border-red-500 w-40 h-24 text-black m-1">
-          <div class="flex flex-col p-2">
-            <div class="flex items-center justify-between">
-              <div class="text-xl font-bold">Ethereum</div>
-              <div class="text-sm">ETH</div>
-            </div>
-            <div class="flex justify-between">
-              <div>$324.45</div>
-              <div>%4.32</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-red-400 rounded border-2 border-red-500 w-40 h-24 text-black m-1">
-          <div class="flex flex-col p-2">
-            <div class="flex items-center justify-between">
-              <div class="text-xl font-bold">Altcoin</div>
-              <div class="text-sm">ALT</div>
-            </div>
-            <div class="flex justify-between">
-              <div>$11.45</div>
-              <div>%4.32</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-green-400 rounded border-2 border-green-500 w-40 h-24 text-black m-1">
-          <div class="flex flex-col p-2">
-            <div class="flex items-center justify-between">
-              <div class="text-xl font-bold">Dogecoin</div>
-              <div class="text-sm">DOGE</div>
-            </div>
-            <div class="flex justify-between">
-              <div>$0.45</div>
-              <div>%4.32</div>
-            </div>
-          </div>
-        </div>
+        <CoinCard :coin="'bitcoin'"  />
+        <CoinCard :coin="'ethereum'"  />
+        <CoinCard :coin="'dogecoin'"  />
+        <CoinCard :coin="'litecoin'"  />
 
       </div>
     </div>
@@ -72,57 +25,7 @@
 
       <div class="flex flex-grow flex-wrap px-4">
 
-        <div class="bg-green-400 rounded border-2 border-green-500 w-40 h-24 text-black m-1">
-          <div class="flex flex-col p-2">
-            <div class="flex items-center justify-between">
-              <div class="text-xl font-bold">Bitcoin</div>
-              <div class="text-sm">BTC</div>
-            </div>
-            <div class="flex justify-between">
-              <div>$42356.45</div>
-              <div>%4.32</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-red-400 rounded border-2 border-red-500 w-40 h-24 text-black m-1">
-          <div class="flex flex-col p-2">
-            <div class="flex items-center justify-between">
-              <div class="text-xl font-bold">Ethereum</div>
-              <div class="text-sm">ETH</div>
-            </div>
-            <div class="flex justify-between">
-              <div>$324.45</div>
-              <div>%4.32</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-green-400 rounded border-2 border-green-500 w-40 h-24 text-black m-1">
-          <div class="flex flex-col p-2">
-            <div class="flex items-center justify-between">
-              <div class="text-xl font-bold">Dogecoin</div>
-              <div class="text-sm">DOGE</div>
-            </div>
-            <div class="flex justify-between">
-              <div>$0.45</div>
-              <div>%4.32</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-green-400 rounded border-2 border-green-500 w-40 h-24 text-black m-1">
-          <div class="flex flex-col p-2">
-            <div class="flex items-center justify-between">
-              <div class="text-xl font-bold">Dogecoin</div>
-              <div class="text-sm">DOGE</div>
-            </div>
-            <div class="flex justify-between">
-              <div>$0.45</div>
-              <div>%4.32</div>
-            </div>
-          </div>
-        </div>
+        <CoinCard v-for="coin in trendingCoins.coins" :coin="coin.item.id" :key="coin.item.id"/>
 
       </div>
     </div>
@@ -136,57 +39,10 @@
 
       <div class="flex flex-grow flex-wrap px-4">
 
-        <div class="bg-green-400 rounded border-2 border-green-500 w-40 h-24 text-black m-1">
-          <div class="flex flex-col p-2">
-            <div class="flex items-center justify-between">
-              <div class="text-xl font-bold">Bitcoin</div>
-              <div class="text-sm">BTC</div>
-            </div>
-            <div class="flex justify-between">
-              <div>$42356.45</div>
-              <div>%4.32</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-red-400 rounded border-2 border-red-500 w-40 h-24 text-black m-1">
-          <div class="flex flex-col p-2">
-            <div class="flex items-center justify-between">
-              <div class="text-xl font-bold">Ethereum</div>
-              <div class="text-sm">ETH</div>
-            </div>
-            <div class="flex justify-between">
-              <div>$324.45</div>
-              <div>%4.32</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-green-400 rounded border-2 border-green-500 w-40 h-24 text-black m-1">
-          <div class="flex flex-col p-2">
-            <div class="flex items-center justify-between">
-              <div class="text-xl font-bold">Dogecoin</div>
-              <div class="text-sm">DOGE</div>
-            </div>
-            <div class="flex justify-between">
-              <div>$0.45</div>
-              <div>%4.32</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-green-400 rounded border-2 border-green-500 w-40 h-24 text-black m-1">
-          <div class="flex flex-col p-2">
-            <div class="flex items-center justify-between">
-              <div class="text-xl font-bold">Dogecoin</div>
-              <div class="text-sm">DOGE</div>
-            </div>
-            <div class="flex justify-between">
-              <div>$0.45</div>
-              <div>%4.32</div>
-            </div>
-          </div>
-        </div>
+        <CoinCard :coin="'bitcoin'"  />
+        <CoinCard :coin="'ethereum'"  />
+        <CoinCard :coin="'cardano'"  />
+        <CoinCard :coin="'tether'"  />
 
       </div>
     </div>
@@ -195,3 +51,51 @@
 
   </div>
 </template>
+
+<script>
+import CoinCard from "@/components/CoinCard.vue";
+
+export default {
+    data () {
+        return {
+          trendingCoins: undefined
+        }
+    },
+    created () {
+        this.fetchTrendingCoins()
+        this.fetchData()
+    },
+    components: {
+      CoinCard
+    },    
+    props: {
+
+    },
+    methods: {
+        fetchTrendingCoins: async function() {
+        this.axios.get('https://api.coingecko.com/api/v3/search/trending').then(res => {
+            console.log(res.data)
+            this.trendingCoins = res.data
+            }).catch(err => {
+            console.log(err.response);
+            });
+            setTimeout(function () { this.fetchData() }.bind(this), 3000)
+        },
+        fetchData: async function() {
+        let coinData = []
+        this.$store.user.portfolio.coins.forEach(element => 
+          this.axios.get(`https://api.coingecko.com/api/v3/coins/${element.id}?localization=false&community_data=false&developer_data=false&sparkline=false`).then(res => {
+          // console.log(res.data)
+          let response = res.data
+          response.quantity = element.quantity
+          coinData.push(response)
+          }).catch(err => {
+          console.log(err.response);
+          })
+        )
+        this.$store.commit('updateCoinData', coinData)
+      }
+    }
+
+}
+</script>
