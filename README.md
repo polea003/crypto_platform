@@ -1,5 +1,8 @@
 # crypto_platform
 
+## View project Video
+https://www.youtube.com/watch?v=xzmVzVUA4Uw&t=183s
+
 ## Project setup
 ```
 npm install
