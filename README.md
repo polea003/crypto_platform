@@ -1,7 +1,7 @@
 # crypto_platform
 
 ## View project video
-https://www.youtube.com/watch?v=xzmVzVUA4Uw&t=183s
+https://www.youtube.com/watch?v=xzmVzVUA4Uw&t
 
 ## Project setup
 ```
